@@ -10,7 +10,7 @@
         android:id="@+id/star"
         android:layout_width="28dp"
         android:layout_height="27dp"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/star"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

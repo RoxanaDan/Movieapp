@@ -3,7 +3,6 @@ package com.example.movieapp.ui.genres
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -15,10 +14,10 @@ import com.example.movieapp.R
 class GenresAdapter(private val genresList: List<Genre>) :
     RecyclerView.Adapter<GenresAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val genreName: TextView = view.findViewById(R.id.tvName)
-        val parentView : ConstraintLayout = view.findViewById(R.id.parent)
-        val starIcon : ImageView = view.findViewById(R.id.star)
+        val parentView: ConstraintLayout = view.findViewById(R.id.parent)
+        val starIcon: ImageView = view.findViewById(R.id.star)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,19 +29,27 @@ class GenresAdapter(private val genresList: List<Genre>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val genre = genresList[position]
         holder.genreName.text = genre.name
-        holder.parentView.setOnClickListener{
+
+        selectGenre(holder, genre)
+
+        holder.parentView.setOnClickListener {
             genre.isSelected = !genre.isSelected
-
-            holder.parentView.setBackgroundColor(when(genre.isSelected){
-                true -> ContextCompat.getColor(holder.parentView.context, R.color.gold)
-                else -> ContextCompat.getColor(holder.parentView.context, R.color.white)
-            })
-            holder.starIcon.visibility = when(genre.isSelected){
-                true -> View.VISIBLE
-                    else -> View.INVISIBLE
-
-            }
+            selectGenre(holder, genre)
         }
     }
+
+    private fun selectGenre(holder: ViewHolder, genre: Genre) {
+        holder.parentView.setBackgroundColor(
+            when (genre.isSelected) {
+                true -> ContextCompat.getColor(holder.parentView.context, R.color.gold)
+                else -> ContextCompat.getColor(holder.parentView.context, R.color.white)
+            }
+        )
+        holder.starIcon.visibility = when (genre.isSelected) {
+            true -> View.VISIBLE
+            else -> View.INVISIBLE
+        }
+    }
+
     override fun getItemCount() = genresList.size
 }

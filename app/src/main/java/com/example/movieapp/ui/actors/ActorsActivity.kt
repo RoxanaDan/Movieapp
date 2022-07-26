@@ -5,27 +5,52 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
+import com.example.movieapp.ui.OnBoardingActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ActorsActivity : AppCompatActivity() {
 
     private var actors: List<Actor> = emptyList()
+    private val actorRepository = ActorRepository.instance
 
     private fun getActors() {
-        actors = listOf(
-            Actor(0, "Leonardo DiCaprio", false),
-            Actor(1, "Jack Dawson", false),
-            Actor(2, "Kate Winslet", false),
-            Actor(3, " Rose Dewitt Bukater", false),
-            Actor(4, "Vin Diesel", false),
-            Actor(5, "Paul Walker", false),
-        )
-        setupRecyclerView()
+        GlobalScope.launch(Dispatchers.IO) {
+            actors = actorRepository.getAllRemoteActors()
+            withContext(Dispatchers.Main) {
+                preselectedSavedActors()
+            }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actors)
+
+        setOnClickListeners()
         getActors()
+    }
+
+    private fun setOnClickListeners() {
+        val btnSave: FloatingActionButton = findViewById(R.id.btnSave)
+        btnSave.setOnClickListener() {
+            saveActors()
+        }
+    }
+
+    private fun getSelectedActors(): List<Actor> {
+        return actors.filter { actor -> actor.isSelected }
+    }
+
+    private fun saveActors() {
+        GlobalScope.launch(Dispatchers.IO) {
+            actorRepository.deleteAllLocal()
+            actorRepository.saveAllLocal(getSelectedActors())
+        }
+        OnBoardingActivity.open(this)
     }
 
     private fun setupRecyclerView() {
@@ -34,4 +59,15 @@ class ActorsActivity : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvActors.adapter = ActorsAdapter(actors)
     }
+
+    private fun preselectedSavedActors() {
+        GlobalScope.launch(Dispatchers.IO) {
+            val savedActors: List<Actor> = actorRepository.getAllLocalActors()
+            withContext(Dispatchers.Main) {
+                actors.forEach { actor -> actor.isSelected = savedActors.contains(actor) }
+                setupRecyclerView()
+            }
+        }
+    }
 }
+

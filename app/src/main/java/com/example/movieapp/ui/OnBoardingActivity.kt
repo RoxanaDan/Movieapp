@@ -9,28 +9,30 @@ import com.example.movieapp.R
 import com.example.movieapp.ui.actors.ActorsActivity
 import com.example.movieapp.ui.genres.GenresActivity
 
+
 class OnBoardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding)
-        setClickListeners()
 
+        setClickListeners()
     }
+
+    private fun setClickListeners(){
+        val genresButton = findViewById<Button>(R.id.btnGenres)
+        genresButton.setOnClickListener {
+            startActivity(Intent(this, GenresActivity::class.java))
+        }
+        val actorsButton = findViewById<Button>(R.id.btnActors)
+        actorsButton.setOnClickListener {
+            startActivity(Intent(this, ActorsActivity::class.java))
+        }
+    }
+
 
     companion object {
         fun open(context: Context) {
             context.startActivity(Intent(context, OnBoardingActivity::class.java))
-        }
-    }
-
-    private fun setClickListeners() {
-        val btnGenres = findViewById<Button>(R.id.btnGenres)
-        btnGenres.setOnClickListener() {
-            startActivity(Intent(this, GenresActivity::class.java))
-        }
-        val btnActors = findViewById<Button>(R.id.btnActors)
-        btnActors.setOnClickListener() {
-            startActivity(Intent(this, ActorsActivity::class.java))
         }
     }
 }
