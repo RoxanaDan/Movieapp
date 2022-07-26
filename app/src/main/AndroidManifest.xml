@@ -17,7 +17,7 @@
         android:theme="@style/Theme.Movieapp"
         tools:targetApi="31">
         <activity
-            android:name=".SearcActivity"
+            android:name=".SearchActivity"
             android:exported="false"
             android:label="@string/title_activity_searc"
             android:theme="@style/Theme.Movieapp.NoActionBar" />

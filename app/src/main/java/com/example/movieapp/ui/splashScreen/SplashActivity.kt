@@ -11,6 +11,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.movieapp.ui.OnBoardingActivity
 import com.example.movieapp.R
+import com.example.movieapp.SearchActivity
 import java.util.*
 
 private const val DELAY = 3000L
@@ -40,7 +41,8 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun openNextScreen() {
-        OnBoardingActivity.open(this)
+      //  OnBoardingActivity.open(this)
+        SearchActivity.open(this)
         finish()
     }
 

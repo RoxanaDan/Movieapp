@@ -1,5 +1,7 @@
 package com.example.movieapp
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
@@ -12,11 +14,18 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.movieapp.databinding.ActivitySearchBinding
+import com.example.movieapp.ui.OnBoardingActivity
 
-class SearcActivity : AppCompatActivity() {
+class SearchActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivitySearchBinding
+
+    companion object {
+        fun open(context: Context) {
+            context.startActivity(Intent(context, SearchActivity::class.java))
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,9 +33,9 @@ class SearcActivity : AppCompatActivity() {
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.appBarSearc.toolbar)
+        setSupportActionBar(binding.appBarSearch.toolbar)
 
-        binding.appBarSearc.fab.setOnClickListener { view ->
+        binding.appBarSearch.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
@@ -37,7 +46,7 @@ class SearcActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_gallery
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
