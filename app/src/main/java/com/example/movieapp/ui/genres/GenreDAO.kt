@@ -30,4 +30,8 @@ interface GenreDAO {
         deleteAll()
         saveAll(genres)
     }
+
+    @Query("SELECT COUNT (id) from genres")
+    fun getCount(): Int
+
 }

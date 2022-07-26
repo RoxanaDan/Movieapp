@@ -1,4 +1,5 @@
 package com.example.movieapp.ui.splashScreen
+
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
@@ -12,6 +13,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.movieapp.ui.OnBoardingActivity
 import com.example.movieapp.R
 import com.example.movieapp.SearchActivity
+import com.example.movieapp.database.Database
+import com.example.movieapp.ui.actors.ActorRepository
+import com.example.movieapp.ui.genres.GenreLocalDataSource
+import com.example.movieapp.ui.genres.GenreRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.*
 
 private const val DELAY = 3000L
@@ -21,6 +30,9 @@ class SplashActivity : AppCompatActivity() {
 
     private var handler: Handler? = null
     private var runnable: Runnable? = null
+    private val genreRepository = GenreRepository.instance
+    private val actorRepository = ActorRepository.instance
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +53,26 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun openNextScreen() {
-      //  OnBoardingActivity.open(this)
-        SearchActivity.open(this)
+        isSaved()
         finish()
+    }
+
+    private fun isSaved(){
+        GlobalScope.launch(Dispatchers.IO) {
+            val genreCount = genreRepository.getCount()
+            withContext(Dispatchers.Main) {
+                // operatiuni
+            verifyIsSaved(genreCount)
+            }
+        }
+    }
+
+    private fun verifyIsSaved(genreCount: Int) {
+        val isSaved = genreCount > 0
+        if(isSaved)
+        SearchActivity.open(this)
+        else
+        OnBoardingActivity.open(this)
     }
 
     override fun onDestroy() {
@@ -63,13 +92,26 @@ class SplashActivity : AppCompatActivity() {
             handler = null
         }
     }
-    private fun View.twinkle(drawableRes: Int = R.drawable.logo, duration: Int = 600, sparsity: Int = 120, size: Int = 80): Twinkle {
+
+    private fun View.twinkle(
+        drawableRes: Int = R.drawable.logo,
+        duration: Int = 600,
+        sparsity: Int = 120,
+        size: Int = 80
+    ): Twinkle {
         return Twinkle(this, drawableRes, duration, sparsity, size)
     }
+
     /**
      * Main Twinkle class
      */
-    class Twinkle(var view: View, var drawableRes: Int, var duration: Int, private var sparsity: Int, var size: Int) {
+    class Twinkle(
+        var view: View,
+        var drawableRes: Int,
+        var duration: Int,
+        private var sparsity: Int,
+        var size: Int
+    ) {
         private var isRunning = true
 
         init {
@@ -86,12 +128,15 @@ class SplashActivity : AppCompatActivity() {
                     layoutParams = ViewGroup.LayoutParams(size, size)
                     setBackgroundResource(drawableRes)
                     try {
-                        x = (rInt.nextInt((view.width / 1.1).toInt()) + view.x + view.width * 0.1f) - (layoutParams.width / 2)
-                        y = (rInt.nextInt((view.height / 1.1).toInt()) + view.y + view.height * 0.1f) - (layoutParams.height / 2)
+                        x =
+                            (rInt.nextInt((view.width / 1.1).toInt()) + view.x + view.width * 0.1f) - (layoutParams.width / 2)
+                        y =
+                            (rInt.nextInt((view.height / 1.1).toInt()) + view.y + view.height * 0.1f) - (layoutParams.height / 2)
                     } catch (e: Exception) {
                         return@apply
                     }
-                    (view.context as? Activity)?.window?.decorView?.findViewById<ViewGroup>(android.R.id.content)?.addView(this)
+                    (view.context as? Activity)?.window?.decorView?.findViewById<ViewGroup>(android.R.id.content)
+                        ?.addView(this)
                     alpha = 0f
                     scaleX = 0.7f
                     scaleY = 0.7f
@@ -123,14 +168,15 @@ class SplashActivity : AppCompatActivity() {
                     }
                 }
                 delay(duration.toLong()) {
-                    (view.context as? Activity)?.window?.decorView?.findViewById<ViewGroup>(android.R.id.content)?.removeView(image)
+                    (view.context as? Activity)?.window?.decorView?.findViewById<ViewGroup>(android.R.id.content)
+                        ?.removeView(image)
                     image = null
                 }
             }
         }
 
 
-        fun stop(){
+        fun stop() {
             isRunning = false
         }
 
@@ -139,7 +185,7 @@ class SplashActivity : AppCompatActivity() {
             var handler: Handler? = Handler()
             val runnable = object : Runnable {
                 override fun run() {
-                    if (!isRunning){
+                    if (!isRunning) {
                         handler = null
                         return
                     }

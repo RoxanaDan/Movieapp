@@ -29,4 +29,7 @@ interface ActorDAO {
         deleteAll()
         saveAll(actors)
     }
+
+    @Query("SELECT COUNT (id) from actors")
+    fun getCount(): Int
 }
