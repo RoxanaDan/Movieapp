@@ -8,8 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.movieapp.ui.tab_activity.R
-import com.example.movieapp.ui.tab_activity.databinding.FragmentTabbedMainBinding
+import com.example.movieapp.databinding.FragmentTabbedMainBinding
 
 /**
  * A placeholder fragment containing a simple view.
