@@ -13,10 +13,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.movieapp.ui.OnBoardingActivity
 import com.example.movieapp.R
 import com.example.movieapp.SearchActivity
-import com.example.movieapp.database.Database
 import com.example.movieapp.ui.actors.ActorRepository
-import com.example.movieapp.ui.genres.GenreLocalDataSource
 import com.example.movieapp.ui.genres.GenreRepository
+import com.example.movieapp.ui.movies.MovieRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -32,7 +31,6 @@ class SplashActivity : AppCompatActivity() {
     private var runnable: Runnable? = null
     private val genreRepository = GenreRepository.instance
     private val actorRepository = ActorRepository.instance
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

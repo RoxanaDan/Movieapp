@@ -1,12 +1,6 @@
 package com.example.movieapp.ui.movies
-
-import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.PrimaryKey
-import com.example.movieapp.ui.genres.Genre
-import com.example.movieapp.ui.genres.GenreDAO
-
 @Entity(tableName = "movies")
 
 data class Movie(
@@ -43,12 +37,14 @@ data class Movie(
     var video: Boolean,
     @ColumnInfo(name = "vote_average")
     var vote_average: Number,
+    @ColumnInfo(name = "isSelected")
+    var isSelected: Boolean)
+
+
 //    @ColumnInfo(name = "total_results")
 //    val total_results: Int,
 //    @ColumnInfo(name = "total_pages")
 //    val total_pages: Int
-    )
-
 //    {
 //    override fun equals(other: Any?) = (other is Movie) && id == other.id
 //

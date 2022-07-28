@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/layout/activity_details.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/activity_genres.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_movies.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_splahscreen.xml" value="0.25" />
@@ -24,6 +25,7 @@
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/item_actor.xml" value="0.22916666666666666" />
         <entry key="app/src/main/res/layout/item_genre.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_movie.xml" value="0.25" />
         <entry key="app/src/main/res/layout/nav_header_searc.xml" value="0.296195652173913" />
         <entry key="app/src/main/res/menu/activity_search_drawer.xml" value="0.375" />
         <entry key="app/src/main/res/menu/searc.xml" value="0.3098958333333333" />

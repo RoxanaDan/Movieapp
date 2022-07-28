@@ -1,4 +1,8 @@
 package com.example.movieapp.ui.movies
 
-class MovieListResponse {
-}
+import com.google.gson.annotations.SerializedName
+
+class MoviesListResponse (
+    @SerializedName("Movies")
+    var movie: List<MovieResponse>
+)

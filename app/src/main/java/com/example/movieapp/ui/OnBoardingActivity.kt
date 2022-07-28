@@ -18,7 +18,7 @@ class OnBoardingActivity : AppCompatActivity() {
         setClickListeners()
     }
 
-    private fun setClickListeners(){
+    private fun setClickListeners() {
         val genresButton = findViewById<Button>(R.id.btnGenres)
         genresButton.setOnClickListener {
             startActivity(Intent(this, GenresActivity::class.java))
@@ -28,7 +28,6 @@ class OnBoardingActivity : AppCompatActivity() {
             startActivity(Intent(this, ActorsActivity::class.java))
         }
     }
-
 
     companion object {
         fun open(context: Context) {

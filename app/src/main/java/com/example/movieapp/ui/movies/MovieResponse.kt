@@ -20,4 +20,5 @@ class MovieResponse (
     var video: Boolean,
     @SerializedName("vote_average")
     var vote_average: Number,
+
 )
