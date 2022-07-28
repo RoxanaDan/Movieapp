@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.example.movieapp.databinding.ActivityTabbedMainBinding
 import com.example.movieapp.ui.tab_activity.ui.main.SectionsPagerAdapter
 import com.example.movieapp.ui.tab_activity.databinding.ActivityTabbedMainBinding
 
@@ -21,11 +22,6 @@ class TabbedMainActivity : AppCompatActivity() {
         binding = ActivityTabbedMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
-        val viewPager: ViewPager = binding.viewPager
-        viewPager.adapter = sectionsPagerAdapter
-        val tabs: TabLayout = binding.tabs
-        tabs.setupWithViewPager(viewPager)
         val fab: FloatingActionButton = binding.fab
 
         fab.setOnClickListener { view ->

@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_save_movies"
-        android:name="com.example.movieapp.ui.gallery.GalleryFragment"
+        android:name="com.example.movieapp.ui.gallery.SavedMoviesFragment"
         android:label="@string/menu_save_movies"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_saved_movies" />
 
 </navigation>
 
