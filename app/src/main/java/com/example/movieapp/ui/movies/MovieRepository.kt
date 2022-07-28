@@ -2,14 +2,13 @@ package com.example.movieapp.ui.movies
 
 import com.example.movieapp.database.Database
 import com.example.movieapp.network.APIClient
-import com.example.movieapp.ui.genres.GenreRemoteDataSource
 
 class MovieRepository private constructor(){
     companion object{
         val instance = MovieRepository()
     }
 
-    private val movieRemoteDataSource = GenreRemoteDataSource(APIClient.instance.retrofit)
+    private val movieRemoteDataSource = MovieRemoteDataSource(APIClient.instance.retrofit)
     private val movieLocalDataSource = MovieLocalDataSource(Database.instance)
 
     fun getAllRemoteMovies() = movieRemoteDataSource.getMovies()
