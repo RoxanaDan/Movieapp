@@ -2,7 +2,8 @@ package com.example.movieapp.ui.movies
 
 import MovieMapper
 import com.example.movieapp.network.executeAndDeliver
-import com.example.movieapp.util.Constants
+import com.example.movieapp.util.Constants.API_KEY
+import com.example.movieapp.util.Constants.LANGUAGE
 import retrofit2.Retrofit
 
 class MovieRemoteDataSource(retrofit: Retrofit) {
@@ -11,7 +12,7 @@ class MovieRemoteDataSource(retrofit: Retrofit) {
     private var movieMapper = MovieMapper()
 
     fun getMovies(): List<Movie> {
-        return apiService.getMovies(Constants.API_KEY, Constants.LANGUAGE)
+        return apiService.getMovies(API_KEY, LANGUAGE)
             .executeAndDeliver()
             .movies
             .map { movieMapper.map(it) }

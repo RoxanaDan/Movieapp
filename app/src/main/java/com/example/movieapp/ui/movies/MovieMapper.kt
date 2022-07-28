@@ -13,7 +13,7 @@ class MovieMapper {
             vote_count = movieResponse.vote_count,
             video = movieResponse.video,
             vote_average = movieResponse.vote_average,
-            isSelected = movieResponse.i
+            isSelected = false
         )
     }
 }
