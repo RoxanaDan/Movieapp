@@ -19,13 +19,15 @@
 
     <TextView
         android:id="@+id/txtMovieName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingVertical="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imgMovie"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnWatched"
         app:layout_constraintHorizontal_bias="0.231"
         app:layout_constraintStart_toEndOf="@+id/imgMovie"
         app:layout_constraintTop_toTopOf="@+id/imgMovie"
@@ -36,8 +38,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingVertical="10dp"
-        android:layout_marginLeft="@dimen/general_horizontal_margin"
-        android:layout_marginRight="@dimen/general_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,12 +51,10 @@
         android:id="@+id/btnWatched"
         android:layout_width="60dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="88dp"
         android:text="@string/watched"
+        android:layout_marginEnd="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/txtMovieName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.935"
-        app:layout_constraintStart_toEndOf="@+id/txtMovieName"
+        app:layout_constraintEnd_toStartOf="@+id/star"
         app:layout_constraintTop_toTopOf="@+id/txtMovieName"
         app:layout_constraintVertical_bias="0.148" />
 
@@ -66,10 +66,7 @@
         android:text="@string/favorite"
         app:layout_constraintBottom_toBottomOf="@+id/btnWatched"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
-        app:layout_constraintStart_toEndOf="@+id/btnWatched"
-        app:layout_constraintTop_toTopOf="@+id/btnWatched"
-        app:layout_constraintVertical_bias="0.629" />
+        app:layout_constraintTop_toTopOf="@+id/btnWatched" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

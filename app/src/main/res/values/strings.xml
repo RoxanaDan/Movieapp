@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MovieApp</string>
+    <string name="app_name">Movieapp</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -16,6 +16,4 @@
 
     <string name="favorite">Favourites</string>
     <string name="watched">Watched</string>
-
-
 </resources>
