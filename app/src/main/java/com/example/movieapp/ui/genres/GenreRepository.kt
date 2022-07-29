@@ -13,6 +13,7 @@ class GenreRepository private constructor(){
 
     fun getAllRemoteGenres() = genreRemoteDataSource.getGenres()
     fun getAllLocalGenres() = genreLocalDataSource.getAll()
+    fun getAllLocalIds() = genreLocalDataSource.getAllIds()
     fun saveLocal(genre: Genre) = genreLocalDataSource.save(genre)
     fun saveAllLocal(genres: List<Genre>) = genreLocalDataSource.saveAll(genres)
     fun deleteLocal(genre: Genre) = genreLocalDataSource.delete(genre)

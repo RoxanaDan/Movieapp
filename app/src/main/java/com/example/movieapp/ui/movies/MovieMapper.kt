@@ -5,8 +5,10 @@ class MovieMapper {
 
     fun map(movieResponse: MovieResponse) : Movie{
         return Movie(
+            id = movieResponse.id,
             poster_path = movieResponse.poster_path,
             adult = movieResponse.adult.toBoolean(),
+            overview = movieResponse.overview,
             release_date =movieResponse.release_date,
             title= movieResponse.title,
             original_language= movieResponse.original_language,

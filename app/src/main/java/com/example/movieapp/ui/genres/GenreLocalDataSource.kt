@@ -6,6 +6,7 @@ class GenreLocalDataSource(database: Database) {
 
     private val genreDAO: GenreDAO = database.movieAppDatabase.genresDao()
     fun getAll() = genreDAO.getAll()
+    fun getAllIds() = genreDAO.getAllIds()
     fun save(genre: Genre) = genreDAO.save(genre)
     fun saveAll(genres: List<Genre>) = genreDAO.saveAll(genres)
     fun delete(genre: Genre) = genreDAO.delete(genre)

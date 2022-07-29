@@ -1,13 +1,15 @@
 package com.example.movieapp.ui.movies
-
-import androidx.room.ColumnInfo
 import com.google.gson.annotations.SerializedName
 
 class MovieResponse (
+    @SerializedName("id")
+    var id : Int,
     @SerializedName("poster_path")
     var poster_path: String,
     @SerializedName("adult")
     var adult: String,
+    @SerializedName("overview")
+    var overview: String,
     @SerializedName("release_date")
     var release_date: String,
     @SerializedName("title")
@@ -19,6 +21,5 @@ class MovieResponse (
     @SerializedName("video")
     var video: Boolean,
     @SerializedName("vote_average")
-    var vote_average: Number,
-
+    var vote_average: Double,
 )

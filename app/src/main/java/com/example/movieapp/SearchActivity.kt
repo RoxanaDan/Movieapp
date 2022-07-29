@@ -14,7 +14,6 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.movieapp.databinding.ActivitySearchBinding
-import com.example.movieapp.ui.OnBoardingActivity
 
 class SearchActivity : AppCompatActivity() {
 
@@ -41,7 +40,7 @@ class SearchActivity : AppCompatActivity() {
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_searc)
+        val navController = findNavController(R.id.nav_host_fragment_content_search)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -55,12 +54,12 @@ class SearchActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.searc, menu)
+        menuInflater.inflate(R.menu.search, menu)
         return true
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_searc)
+        val navController = findNavController(R.id.nav_host_fragment_content_search)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

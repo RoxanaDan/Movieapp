@@ -1,34 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:id="@+id/star"
-        android:layout_width="28dp"
-        android:layout_height="27dp"
+        android:id="@+id/imgMovie"
+        android:layout_width="72dp"
+        android:layout_height="68dp"
         android:src="@drawable/star"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.235" />
 
     <TextView
-        android:id="@+id/tvName"
+        android:id="@+id/txtMovieName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingVertical="10dp"
-        tools:text="Titanic"
         android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgMovie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintStart_toEndOf="@+id/imgMovie"
+        app:layout_constraintTop_toTopOf="@+id/imgMovie"
+        tools:text="Titanic" />
+
+    <TextView
+        android:id="@+id/txtMovieDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:layout_marginLeft="@dimen/general_horizontal_margin"
+        android:layout_marginRight="@dimen/general_horizontal_margin"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imgMovie"
+        tools:text="text description" />
 
+    <Button
+        android:id="@+id/btnWatched"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="88dp"
+        android:text="@string/watched"
+        app:layout_constraintBottom_toBottomOf="@+id/txtMovieName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintStart_toEndOf="@+id/txtMovieName"
+        app:layout_constraintTop_toTopOf="@+id/txtMovieName"
+        app:layout_constraintVertical_bias="0.148" />
 
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="56dp"
+        android:layout_height="35dp"
+        android:src="@drawable/star"
+        android:text="@string/favorite"
+        app:layout_constraintBottom_toBottomOf="@+id/btnWatched"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toEndOf="@+id/btnWatched"
+        app:layout_constraintTop_toTopOf="@+id/btnWatched"
+        app:layout_constraintVertical_bias="0.629" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

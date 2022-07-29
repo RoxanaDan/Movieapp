@@ -13,27 +13,28 @@ import com.example.movieapp.R
 class MoviesAdapter(private val moviesList: List<Movie>) :
     RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val movieName: TextView = view.findViewById(R.id.tvName)
-        val parentView: ConstraintLayout = view.findViewById(R.id.parent)
-        val starIcon: ImageView = view.findViewById(R.id.star)
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_movie, parent, false)
         return ViewHolder(view)
     }
 
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val movieName: TextView = view.findViewById(R.id.txtMovieName)
+        val parentView: ConstraintLayout = view.findViewById(R.id.parent)
+        val textDescription: TextView = view.findViewById(R.id.txtMovieDescription)
+        val starIcon: ImageView = view.findViewById(R.id.star)
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val movie = moviesList[position]
         holder.movieName.text = movie.title
-
-        selectMovie(holder, movie)
+        holder.textDescription.text = movie.overview
 
         holder.parentView.setOnClickListener {
             movie.isSelected = !movie.isSelected
             selectMovie(holder, movie)
+
         }
     }
 

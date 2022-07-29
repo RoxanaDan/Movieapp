@@ -1,10 +1,11 @@
-package com.example.movieapp.ui.movies
-
-import MovieDAO
 import com.example.movieapp.database.Database
+import com.example.movieapp.ui.movies.Movie
+import com.example.movieapp.ui.movies.MovieDAO
 
 class MovieLocalDataSource(database: Database) {
+
     private val movieDAO: MovieDAO = database.movieAppDatabase.moviesDao()
+
     fun getAll() = movieDAO.getAll()
     fun save(movie: Movie) = movieDAO.save(movie)
     fun saveAll(movies: List<Movie>) = movieDAO.saveAll(movies)
