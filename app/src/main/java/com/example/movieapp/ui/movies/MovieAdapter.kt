@@ -8,7 +8,10 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.movieapp.R
+import com.example.movieapp.util.Constants
+import com.example.movieapp.util.Constants.IMAGE_URL
 
 class MoviesAdapter(private val moviesList: List<Movie>) :
     RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
@@ -24,12 +27,17 @@ class MoviesAdapter(private val moviesList: List<Movie>) :
         val parentView: ConstraintLayout = view.findViewById(R.id.parent)
         val textDescription: TextView = view.findViewById(R.id.txtMovieDescription)
         val starIcon: ImageView = view.findViewById(R.id.star)
+        val imgMovie: ImageView = view.findViewById(R.id.imgMovie)
+
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val movie = moviesList[position]
         holder.movieName.text = movie.title
         holder.textDescription.text = movie.overview
+
+        Glide.with(holder.imgMovie.context).load(IMAGE_URL + movie.poster_path).into(holder.imgMovie)
+        selectMovie(holder, movie)
 
         holder.parentView.setOnClickListener {
             movie.isSelected = !movie.isSelected

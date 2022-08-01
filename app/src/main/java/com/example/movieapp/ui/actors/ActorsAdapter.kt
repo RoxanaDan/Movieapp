@@ -8,9 +8,11 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.movieapp.R
 import com.example.movieapp.ui.genres.Genre
 import com.example.movieapp.ui.genres.GenresAdapter
+import com.example.movieapp.util.Constants.IMAGE_URL
 
 class ActorsAdapter(private val actorList: List<Actor>) :
     RecyclerView.Adapter<ActorsAdapter.ViewHolder>() {
@@ -19,6 +21,7 @@ class ActorsAdapter(private val actorList: List<Actor>) :
         val actorName: TextView = view.findViewById(R.id.tvName)
         val parentView: ConstraintLayout = view.findViewById(R.id.parent)
         val starIcon: ImageView = view.findViewById(R.id.heart)
+        val ivProfile: ImageView = view.findViewById(R.id.ivProfile)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -31,6 +34,7 @@ class ActorsAdapter(private val actorList: List<Actor>) :
         val actor = actorList[position]
         holder.actorName.text = actor.name
 
+        Glide.with(holder.ivProfile.context).load(IMAGE_URL+ actor.profile_path).into(holder.ivProfile)
         selectActor(holder, actor)
 
         holder.parentView.setOnClickListener {
