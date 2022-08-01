@@ -97,21 +97,31 @@ class SearchMoviesFragment : Fragment() {
         _binding = null
     }
 
-    private fun setSearchTextListener(){
+    private fun setSearchTextListener() {
         val search = binding.moviesSearch
-        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(newText: String?): Boolean {
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-//                if(newText?.length!! >= 1) {
-//                    getSearchedMovies(newText)
-//                } else
-//                    getMovies()
+                if ((newText?.length ?: 0) >= 1) {
+                    getSearchedMovies(newText ?: "".toString())
+                } else
+                    getMovies()
                 return false
             }
         })
     }
 
+    fun getSearchedMovies(query: String) {
+        GlobalScope.launch(Dispatchers.IO) {
+            movies = movieRepository.getSearchedMovies(query)
+            withContext(Dispatchers.Main) {
+                // moviesLoaded(movies)
+                binding.rvMovies.adapter = MoviesAdapter(movies)
+
+            }
+        }
+    }
 }

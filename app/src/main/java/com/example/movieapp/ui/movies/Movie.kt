@@ -12,23 +12,23 @@ data class Movie(
     @ColumnInfo(name = "id")
     var id: Int,
     @ColumnInfo(name = "poster_path")
-    var poster_path: String,
+    var poster_path: String?,
     @ColumnInfo(name = "adult")
-    var adult: Boolean,
+    var adult: Boolean?,
     @ColumnInfo(name = "overview")
-    var overview: String,
+    var overview: String?,
     @ColumnInfo(name = "release_date")
-    var release_date: String,
+    var release_date: String?,
     @ColumnInfo(name = "title")
     var title: String,
     @ColumnInfo(name = "original_language")
-    var original_language: String,
+    var original_language: String?,
     @ColumnInfo(name = "vote_count")
-    var vote_count: Int,
+    var vote_count: Int?,
     @ColumnInfo(name = "video")
-    var video: Boolean,
+    var video: Boolean?,
     @ColumnInfo(name = "vote_average")
-    var vote_average: Double,
+    var vote_average: Double?,
     @ColumnInfo(name = "isSelected")
     var isSelected: Boolean) {
     override fun equals(other: Any?) = (other is Movie) && id == other.id
