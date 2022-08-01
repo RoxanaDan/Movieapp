@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/ic_baseline_local_movies_24.xml" value="0.2535" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_local_movies.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/ic_menu_camera.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
@@ -20,7 +22,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_movies.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_search.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_search.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_splahscreen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_tabbed_main.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout/app_bar_searc.xml" value="0.21875" />
@@ -29,7 +31,7 @@
         <entry key="app/src/main/res/layout/content_search.xml" value="0.2128623188405797" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.296195652173913" />
         <entry key="app/src/main/res/layout/fragment_saved_movies.xml" value="0.25104166666666666" />
-        <entry key="app/src/main/res/layout/fragment_search_movies.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_search_movies.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/fragment_tabbed_main.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/item_actor.xml" value="0.22916666666666666" />
@@ -37,7 +39,7 @@
         <entry key="app/src/main/res/layout/item_movie.xml" value="0.25" />
         <entry key="app/src/main/res/layout/nav_header_searc.xml" value="0.296195652173913" />
         <entry key="app/src/main/res/layout/nav_header_search.xml" value="0.1515625" />
-        <entry key="app/src/main/res/menu/activity_search_drawer.xml" value="0.375" />
+        <entry key="app/src/main/res/menu/activity_search_drawer.xml" value="0.25" />
         <entry key="app/src/main/res/menu/searc.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/menu/search.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
