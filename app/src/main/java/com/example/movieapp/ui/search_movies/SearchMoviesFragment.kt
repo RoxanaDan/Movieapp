@@ -60,10 +60,9 @@ class SearchMoviesFragment : Fragment() {
     private fun preselectSavedGenres() {
             GlobalScope.launch(Dispatchers.IO) {
                 val savedGenresIds: List<Int> = genreRepository.getAllLocalIds()
-        //        val savedActorIds: List<Int> = actorRepository.getAllLocalIds()
+                val savedActorIds: List<Int> = actorRepository.getAllLocalIds()
                 genreIds = savedGenresIds.joinToString(separator ="|" ) {"$it"}
-
-                actorIds = " "
+                actorIds = savedActorIds.joinToString(separator ="|" ) {"$it"}
                 Log.d("Test", "Rezultat: $genreIds")
                 withContext(Dispatchers.Main) {
                     getMovies()

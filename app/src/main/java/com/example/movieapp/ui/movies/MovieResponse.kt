@@ -21,5 +21,5 @@ class MovieResponse (
     @SerializedName("video")
     var video: Boolean,
     @SerializedName("vote_average")
-    var vote_average: Double,
+    var vote_average: Double
 )

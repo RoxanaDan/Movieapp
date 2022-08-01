@@ -5,6 +5,7 @@ class ActorLocalDataSource (database: Database) {
 
     private val actorDAO: ActorDAO = database.movieAppDatabase.actorsDao()
     fun getAll() = actorDAO.getAll()
+    fun getAllIds() = actorDAO.getAllIds()
     fun save(actor: Actor) = actorDAO.save(actor)
     fun saveAll(actors: List<Actor>) = actorDAO.saveAll(actors)
     fun delete(actor: Actor) = actorDAO.delete(actor)

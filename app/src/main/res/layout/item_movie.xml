@@ -19,11 +19,10 @@
 
     <TextView
         android:id="@+id/txtMovieName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingVertical="10dp"
+        android:layout_width="144dp"
+        android:layout_height="48dp"
         android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
+        android:paddingVertical="10dp"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imgMovie"
@@ -49,14 +48,15 @@
 
     <Button
         android:id="@+id/btnWatched"
-        android:layout_width="60dp"
+        android:layout_width="109dp"
         android:layout_height="40dp"
-        android:text="@string/watched"
         android:layout_marginEnd="5dp"
+        android:text="@string/watched"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="@+id/txtMovieName"
         app:layout_constraintEnd_toStartOf="@+id/star"
         app:layout_constraintTop_toTopOf="@+id/txtMovieName"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/star"

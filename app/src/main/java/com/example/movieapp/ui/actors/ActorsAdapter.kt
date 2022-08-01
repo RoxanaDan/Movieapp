@@ -19,8 +19,6 @@ class ActorsAdapter(private val actorList: List<Actor>) :
         val actorName: TextView = view.findViewById(R.id.tvName)
         val parentView: ConstraintLayout = view.findViewById(R.id.parent)
         val starIcon: ImageView = view.findViewById(R.id.heart)
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

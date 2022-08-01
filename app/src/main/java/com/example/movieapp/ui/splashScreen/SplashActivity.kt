@@ -55,23 +55,23 @@ class SplashActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun isSaved(){
+    private fun isSaved() {
         GlobalScope.launch(Dispatchers.IO) {
             val genreCount = genreRepository.getCount()
             val actorCount = actorRepository.getCount()
             withContext(Dispatchers.Main) {
                 // operatiuni
-            verifyIsSaved(genreCount, actorCount)
+                verifyIsSaved(genreCount, actorCount)
             }
         }
     }
 
     private fun verifyIsSaved(genreCount: Int, actorCount: Int) {
-        val isSaved = genreCount > 0  && actorCount > 0
-        if(isSaved)
-        SearchActivity.open(this)
+        val isSaved = genreCount > 0 && actorCount > 0
+        if (isSaved)
+            SearchActivity.open(this)
         else
-        OnBoardingActivity.open(this)
+            OnBoardingActivity.open(this)
     }
 
     override fun onDestroy() {

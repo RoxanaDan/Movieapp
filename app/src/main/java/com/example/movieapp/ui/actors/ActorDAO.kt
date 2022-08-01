@@ -10,6 +10,9 @@ interface ActorDAO {
     @Query("SELECT * from actors")
     fun getAll(): List<Actor>
 
+    @Query("SELECT id FROM actors")
+    fun getAllIds(): List<Int>
+
     @Insert
     fun save(actor: Actor)
 

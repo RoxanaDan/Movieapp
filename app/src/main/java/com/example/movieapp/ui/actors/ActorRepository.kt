@@ -12,6 +12,7 @@ class ActorRepository private constructor() {
 
     fun getAllRemoteActors() = actorRemoteDataSource.getActors()
     fun getAllLocalActors() = actorLocalDataSource.getAll()
+    fun getAllLocalIds() = actorLocalDataSource.getAllIds()
     fun saveLocal(actor: Actor) = actorLocalDataSource.save(actor)
     fun saveAllLocal(actors: List<Actor>) = actorLocalDataSource.saveAll(actors)
     fun deleteLocal(actor: Actor) = actorLocalDataSource.delete(actor)
