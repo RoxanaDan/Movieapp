@@ -11,5 +11,6 @@
     <color name="gold">#DC900D</color>
     <color name="red">#FFA80513</color>
     <color name="darkgrey">#171512</color>
+    <color name="transparent">#00000000</color>
 
 </resources>

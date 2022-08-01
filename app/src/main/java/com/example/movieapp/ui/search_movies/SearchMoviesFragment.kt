@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,8 +32,8 @@ class SearchMoviesFragment : Fragment() {
     private val movieRepository = MovieRepository.instance
     private val genreRepository = GenreRepository.instance
     private val actorRepository = ActorRepository.instance
-    private  var genreIds = ""
-    private  var actorIds = ""
+    private var genreIds = ""
+    private var actorIds = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,6 +52,7 @@ class SearchMoviesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getQueryParams()
+        setSearchTextListener()
     }
 
     private fun getQueryParams() {
@@ -58,17 +60,17 @@ class SearchMoviesFragment : Fragment() {
     }
 
     private fun preselectSavedGenres() {
-            GlobalScope.launch(Dispatchers.IO) {
-                val savedGenresIds: List<Int> = genreRepository.getAllLocalIds()
-                val savedActorIds: List<Int> = actorRepository.getAllLocalIds()
-                genreIds = savedGenresIds.joinToString(separator ="|" ) {"$it"}
-                actorIds = savedActorIds.joinToString(separator ="|" ) {"$it"}
-                Log.d("Test", "Rezultat: $genreIds")
-                withContext(Dispatchers.Main) {
-                    getMovies()
-                }
+        GlobalScope.launch(Dispatchers.IO) {
+            val savedGenresIds: List<Int> = genreRepository.getAllLocalIds()
+            val savedActorIds: List<Int> = actorRepository.getAllLocalIds()
+            genreIds = savedGenresIds.joinToString(separator = "|") { "$it" }
+            actorIds = savedActorIds.joinToString(separator = "|") { "$it" }
+            Log.d("Test", "Rezultat: $genreIds")
+            withContext(Dispatchers.Main) {
+                getMovies()
             }
         }
+    }
 
     private fun getMovies() {
         GlobalScope.launch(Dispatchers.IO) {
@@ -94,4 +96,22 @@ class SearchMoviesFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    private fun setSearchTextListener(){
+        val search = binding.moviesSearch
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(newText: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+//                if(newText?.length!! >= 1) {
+//                    getSearchedMovies(newText)
+//                } else
+//                    getMovies()
+                return false
+            }
+        })
+    }
+
 }

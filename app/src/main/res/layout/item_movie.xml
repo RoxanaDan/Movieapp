@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/parent"
+    tools:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -19,6 +20,7 @@
         android:id="@+id/txtMovieName"
         android:layout_width="110dp"
         android:layout_height="45dp"
+        android:textColor="@color/white"
         android:layout_marginTop="8dp"
         android:paddingVertical="10dp"
         android:textSize="20sp"
@@ -33,6 +35,7 @@
         android:id="@+id/txtMovieDescription"
         android:layout_width="288dp"
         android:layout_height="128dp"
+        android:textColor="@color/white"
         android:layout_marginBottom="19dp"
         android:paddingVertical="10dp"
         android:textSize="15sp"
@@ -61,6 +64,7 @@
         android:id="@+id/star"
         android:layout_width="56dp"
         android:layout_height="35dp"
+        android:background="@color/transparent"
         android:src="@drawable/star"
         android:text="@string/favorite"
         app:layout_constraintBottom_toBottomOf="@+id/btnWatched"
@@ -69,3 +73,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,5 +1,6 @@
 package com.example.movieapp.ui.movies
 import MovieLocalDataSource
+import androidx.room.Query
 import com.example.movieapp.database.Database
 import com.example.movieapp.network.APIClient
 
@@ -12,6 +13,8 @@ class MovieRepository private constructor(){
     private val movieLocalDataSource = MovieLocalDataSource(Database.instance)
 
     fun getAllRemoteMovies() = movieRemoteDataSource.getMovies()
+    fun getSearchedMovies(query: String) = movieRemoteDataSource.getSearchedMovies(query)
+
     fun getAllLocalMovies() = movieLocalDataSource.getAll()
     fun saveLocal(movie: Movie) = movieLocalDataSource.save(movie)
     fun saveAllLocal(movies: List<Movie>) = movieLocalDataSource.saveAll(movies)
