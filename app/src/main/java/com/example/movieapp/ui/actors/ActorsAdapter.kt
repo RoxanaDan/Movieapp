@@ -47,7 +47,7 @@ class ActorsAdapter(private val actorList: List<Actor>) :
         holder.parentView.setBackgroundColor(
             when (actor.isSelected) {
                 true -> ContextCompat.getColor(holder.parentView.context, R.color.gold)
-                else -> ContextCompat.getColor(holder.parentView.context, R.color.white)
+                else -> ContextCompat.getColor(holder.parentView.context, R.color.black)
             }
         )
         holder.starIcon.visibility = when (actor.isSelected) {

@@ -10,7 +10,10 @@
     <color name="greyLight">#D3CFCF</color>
     <color name="grey">#BA515151</color>
     <color name="gold">#DC900D</color>
+    <color name="yellow">#e0cc44</color>
     <color name="darkgrey">#171512</color>
     <color name="transparent">#00000000</color>
+    <color name="white_18a">#18ffffff</color>
+
 
 </resources>

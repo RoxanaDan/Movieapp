@@ -48,23 +48,26 @@
         app:layout_constraintVertical_bias="0.0"
         tools:text="text description" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnWatched"
-        android:layout_width="109dp"
+        android:backgroundTint="#19ffffff"
+        android:layout_width="56dp"
         android:layout_height="40dp"
         android:layout_marginEnd="5dp"
-        android:text="@string/watched"
-        android:textSize="11sp"
+        android:src="@drawable/ic_watched"
         app:layout_constraintBottom_toBottomOf="@+id/txtMovieName"
-        app:layout_constraintEnd_toStartOf="@+id/star"
+        app:layout_constraintEnd_toStartOf="@+id/btnFavorite"
         app:layout_constraintTop_toTopOf="@+id/txtMovieName"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        app:tint="@color/yellow" />
 
-    <ImageView
-        android:id="@+id/star"
+    <ImageButton
+        android:id="@+id/btnFavorite"
         android:layout_width="56dp"
-        android:layout_height="35dp"
-        android:background="@color/transparent"
+        android:layout_height="40dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:foregroundTint="@color/red_200"
+        android:backgroundTint="#19ffffff"
         android:src="@drawable/star"
         android:text="@string/favorite"
         app:layout_constraintBottom_toBottomOf="@+id/btnWatched"

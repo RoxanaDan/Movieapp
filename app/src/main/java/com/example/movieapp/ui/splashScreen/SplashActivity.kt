@@ -36,7 +36,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splahscreen)
         initHandlerToOpenNextActivity()
-        val imageView = findViewById<ImageView>(R.id.ivLogo)
+        val imageView = findViewById<ImageView>(R.id.ivMovie)
 
         imageView.twinkle()
     }
@@ -93,7 +93,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun View.twinkle(
-        drawableRes: Int = R.drawable.logo,
+        drawableRes: Int = R.drawable.movie,
         duration: Int = 600,
         sparsity: Int = 120,
         size: Int = 80

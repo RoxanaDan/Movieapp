@@ -30,7 +30,13 @@ data class Movie(
     @ColumnInfo(name = "vote_average")
     var vote_average: Double?,
     @ColumnInfo(name = "isSelected")
-    var isSelected: Boolean) {
+    var isSelected: Boolean,
+    @ColumnInfo(name = "is_favorite")
+    var isFavorite: Boolean,
+    @ColumnInfo(name = "is_watched")
+    var isWatched: Boolean)
+
+{
     override fun equals(other: Any?) = (other is Movie) && id == other.id
 }
 //override fun toString(): String {

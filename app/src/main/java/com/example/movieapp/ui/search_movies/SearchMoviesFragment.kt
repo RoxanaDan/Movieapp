@@ -77,6 +77,7 @@ class SearchMoviesFragment : Fragment() {
             movies = movieRepository.getAllRemoteMovies()
             withContext(Dispatchers.Main) {
                 moviesLoaded(movies)
+                preselectMovies()
             }
         }
     }
@@ -119,8 +120,20 @@ class SearchMoviesFragment : Fragment() {
             movies = movieRepository.getSearchedMovies(query)
             withContext(Dispatchers.Main) {
                 // moviesLoaded(movies)
+                preselectMovies()
                 binding.rvMovies.adapter = MoviesAdapter(movies)
 
+            }
+        }
+    }
+
+    private fun preselectMovies() {
+        GlobalScope.launch(Dispatchers.IO) {
+            val saved = movieRepository.getAllLocalMovies()
+            movies.forEach {
+                val index = saved.indexOf(it)
+                it.isFavorite = (index != -1) && saved[index].isFavorite
+                it.isWatched = (index != -1) && saved[index].isWatched
             }
         }
     }
