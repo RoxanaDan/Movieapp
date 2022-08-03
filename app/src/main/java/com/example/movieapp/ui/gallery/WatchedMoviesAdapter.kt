@@ -24,10 +24,10 @@ class WatchedMoviesAdapter(
         var favorite: Boolean = false
         var watched: Boolean = false
 
-        val itemIvMovie = view.findViewById<ImageView>(R.id.ivMovie)!!
-        val itemIvTitle = view.findViewById<TextView>(R.id.txtMovieName)!!
-        val itemIvDesc = view.findViewById<TextView>(R.id.txtMovieDescription)!!
-        val itemBtnDelete = view.findViewById<ImageButton>(R.id.btnDelete)!!
+        val itemIvMovie: ImageView= view.findViewById<ImageView>(R.id.imgMovie)
+        val itemIvTitle: TextView= view.findViewById<TextView>(R.id.txtMovieName)
+        val itemIvDesc: TextView= view.findViewById<TextView>(R.id.txtMovieDescription)
+        val itemBtnDelete: ImageButton= view.findViewById<ImageButton>(R.id.btnDelete)
     }
 
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO

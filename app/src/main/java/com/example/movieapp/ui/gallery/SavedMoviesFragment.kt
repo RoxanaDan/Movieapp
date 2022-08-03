@@ -38,7 +38,7 @@ class SavedMoviesFragment : Fragment(R.layout.fragment_saved_movies) {
                 adapter?.addFragment(FavoriteFragment(movies), "favorites")
                 adapter?.addFragment(WatchedFragment(movies), "watched")
 
-                viewPager.adapter = adapter!!
+                viewPager.adapter = adapter
                 viewPager.currentItem = 0
 
                 TabLayoutMediator(tabs, viewPager) { tab, position ->

@@ -40,6 +40,8 @@ class MoviesAdapter(private val moviesList: List<Movie>) :
         val textDescription: TextView = view.findViewById(R.id.txtMovieDescription)
         val starIcon: ImageView = view.findViewById(R.id.btnFavorite)
         val imgMovie: ImageView = view.findViewById(R.id.imgMovie)
+        val ivVote: TextView = view.findViewById(R.id.tvVote)
+        val iv_release_date: TextView = view.findViewById(R.id.iv_release_date)
         val watchedButton: ImageButton = view.findViewById(R.id.btnWatched)
         val favoriteButton: ImageButton = view.findViewById(R.id.btnFavorite)
     }
@@ -48,6 +50,8 @@ class MoviesAdapter(private val moviesList: List<Movie>) :
         val movie = moviesList[position]
         holder.movieName.text = movie.title
         holder.textDescription.text = movie.overview
+        holder.iv_release_date.text = movie.release_date
+        holder.ivVote.text = movie.vote_average.toString()
 
         holder.favorite = movie.isFavorite
         holder.watched = movie.isWatched
