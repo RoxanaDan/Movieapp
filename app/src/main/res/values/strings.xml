@@ -8,7 +8,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_search_movies">Search movies</string>
+    <string name="menu_search_movies">Movies</string>
     <string name="menu_search_actors">Favourites Actors</string>
     <string name="menu_search_genres">Favourites Genres</string>
     <string name="menu_save_movies">Favourites Movies</string>

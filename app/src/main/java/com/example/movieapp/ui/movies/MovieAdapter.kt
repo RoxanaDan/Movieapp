@@ -52,7 +52,6 @@ class MoviesAdapter(private val moviesList: List<Movie>) :
         holder.textDescription.text = movie.overview
         holder.iv_release_date.text = movie.release_date
         holder.ivVote.text = movie.vote_average.toString()
-
         holder.favorite = movie.isFavorite
         holder.watched = movie.isWatched
 

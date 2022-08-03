@@ -20,6 +20,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@drawable/gradient"
+        app:itemTextColor="@color/lightBlack"
+        app:itemIconTint="@color/lightBlack"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_search"
         app:menu="@menu/activity_search_drawer" />
