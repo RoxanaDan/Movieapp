@@ -63,6 +63,7 @@
                 android:backgroundTint="#19ffffff"
                 android:src="@drawable/ic_watched"
                 app:tint="@color/yellow" />
+
         </LinearLayout>
 
         <LinearLayout

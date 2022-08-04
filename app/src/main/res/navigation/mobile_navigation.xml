@@ -16,6 +16,10 @@
         android:name="com.example.movieapp.ui.gallery.SavedMoviesFragment"
         android:label="@string/menu_save_movies"
         tools:layout="@layout/fragment_saved_movies" />
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.example.movieapp.ui.moviedetails.MovieDetailsFragment"
+        android:label="MovieDetailsFragment" />
 
 </navigation>
 
