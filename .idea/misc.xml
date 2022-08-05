@@ -46,7 +46,7 @@
         <entry key="app/src/main/res/layout/item_movie_delete.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_movie_details.xml" value="0.20108695652173914" />
         <entry key="app/src/main/res/layout/nav_header_searc.xml" value="0.296195652173913" />
-        <entry key="app/src/main/res/layout/nav_header_search.xml" value="0.1515625" />
+        <entry key="app/src/main/res/layout/nav_header_search.xml" value="0.25" />
         <entry key="app/src/main/res/layout/rv_details_genre.xml" value="0.19701086956521738" />
         <entry key="app/src/main/res/menu/activity_search_drawer.xml" value="0.25" />
         <entry key="app/src/main/res/menu/searc.xml" value="0.3098958333333333" />
