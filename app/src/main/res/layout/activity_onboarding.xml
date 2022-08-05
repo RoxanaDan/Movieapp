@@ -10,14 +10,14 @@
         android:id="@+id/btnGenres"
         android:layout_width="220dp"
         android:layout_height="60dp"
-        android:layout_marginTop="368dp"
+        android:layout_marginTop="372dp"
         android:backgroundTint="@color/darkgrey"
         android:text="Genres"
-        android:textColor="@color/gold"
+        android:textColor="@color/yellow"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,10 +25,10 @@
         android:id="@+id/btnActors"
         android:layout_width="220dp"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/darkgrey"
         android:text="Actors"
-        android:textColor="@color/gold"
+        android:textColor="@color/yellow"
         android:textSize="16dp"
         android:textStyle="bold"
 
@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.401"
+        app:layout_constraintVertical_bias="0.347"
         app:srcCompat="@drawable/movie" />
 
     <TextView
@@ -78,5 +78,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.74" />
+        app:layout_constraintVertical_bias="0.707" />
 </androidx.constraintlayout.widget.ConstraintLayout>
