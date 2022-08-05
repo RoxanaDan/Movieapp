@@ -44,12 +44,12 @@
                 android:id="@+id/tvReleaseDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:textSize="21sp"
+                android:layout_marginStart="4dp"
                 android:textColor="@color/white"
-                app:layout_constraintStart_toEndOf="@id/tvTitle"
-                app:layout_constraintTop_toTopOf="@id/tvTitle"
-                app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintVertical_bias="1.0"
                 tools:text="25.06 toamna tarziu" />
 
             <TextView
@@ -62,7 +62,7 @@
                 android:layout_marginEnd="25dp"
                 android:layout_marginTop="25dp"
                 app:layout_constraintStart_toStartOf="@id/tvTitle"
-                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvReleaseDate"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout." />
 
@@ -75,8 +75,9 @@
                 android:foregroundTint="@color/red_200"
                 android:src="@drawable/star"
                 android:text="@string/favorite"
+                app:layout_constraintBottom_toBottomOf="@id/tvTitle"
                 app:layout_constraintEnd_toStartOf="@+id/btnWatched"
-                app:layout_constraintTop_toTopOf="@+id/tvReleaseDate" />
+                app:layout_constraintTop_toTopOf="@+id/tvTitle" />
 
             <ImageButton
                 android:id="@+id/btnWatched"
@@ -84,8 +85,9 @@
                 android:layout_height="40dp"
                 android:backgroundTint="#19ffffff"
                 android:src="@drawable/ic_watched"
+                app:layout_constraintBottom_toBottomOf="@id/tvTitle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvReleaseDate"
+                app:layout_constraintTop_toTopOf="@+id/tvTitle"
                 app:tint="@color/yellow" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

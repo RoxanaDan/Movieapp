@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.movieapp.databinding.FragmentMovieDetailsBinding
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -38,7 +40,29 @@ class MovieDetailsFragment : Fragment() {
             viewModel.movie = viewModel.getMovieDetails()
             withContext(Dispatchers.Main){
                 binding.tvTitle.text = viewModel.movie?.title ?: ""
+                binding.tvDescription.text = viewModel.movie?.overview ?: ""
+                binding.tvReleaseDate.text = viewModel.movie?.release_date ?: ""
+                loadYtbVideos()
             }
         }
+    }
+
+    private fun loadYtbVideos(){
+        binding.youtubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(youTubePlayer: YouTubePlayer) {
+                viewModel.movie?.videos?.results?.get(0)?.let { youTubePlayer.loadVideo(findYoutubeTrailer(), 0f) }
+            }
+        })
+    }
+
+
+    private fun findYoutubeTrailer() : String {
+        viewModel.movie?.videos?.results?.let{ videoList ->
+            for(video in videoList) {
+                if(video.type == "Trailer")
+                    return video.key
+            }
+        }
+        return ""
     }
 }

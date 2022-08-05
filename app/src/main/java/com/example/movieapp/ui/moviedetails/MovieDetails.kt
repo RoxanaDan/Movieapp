@@ -6,7 +6,7 @@ data class MovieDetails(
     var id: Int,
     var adult: Boolean,
     var original_language: String?,
-    var video: Boolean?,
+//    var video: Boolean?,
     var genres: List<Genre>,
     var original_title: String,
     var overview: String,
@@ -16,5 +16,6 @@ data class MovieDetails(
     var status: String,
     var title: String,
     var vote_average: Number?,
-    var vote_count: Int?
+    var vote_count: Int?,
+    var videos : VideoList
 )

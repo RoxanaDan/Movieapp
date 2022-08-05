@@ -19,8 +19,6 @@ class MovieDetailsResponse (
     var original_language: String?,
     @SerializedName("vote_count")
     var vote_count: Int?,
-    @SerializedName("video")
-    var video: Boolean?,
     @SerializedName("vote_average")
     var vote_average: Double,
     @SerializedName("genres")
@@ -29,4 +27,5 @@ class MovieDetailsResponse (
     var popularity: Number?,
     @SerializedName("status")
     var status: String,
+    var videos: VideoList
     )
