@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/movieDetailsFragment"
         android:name="com.example.movieapp.ui.moviedetails.MovieDetailsFragment"
-        android:label="MovieDetailsFragment" />
+        android:label="Details" />
 
 </navigation>
 
